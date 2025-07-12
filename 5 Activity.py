@@ -30,6 +30,7 @@ class Colegio:
         promedio = 0
         for alumno in self.alumnos:
             promedio += alumno.note
+        print(f"El promedio de los alumnos es: {promedio/len(self.alumnos)}")
 
 
 def main():
