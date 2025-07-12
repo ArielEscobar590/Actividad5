@@ -24,7 +24,12 @@ class Colegio:
             a += 1
 
     def BuscarAlumno(self):
-        print("Ingrese el carné del alumno")
+        buscarcarne = input("Ingrese el carné del alumno")
+        for alumno in self.alumnos:
+            if alumno.carne == buscarcarne:
+                print(f"Hemos encontrado ha el Alumno: {alumno.nombre} con el carne: {alumno.carne}")
+                print(f"Datos del Alumno:")
+                print(f" Carrera: {alumno.alumnos}, Nota Final: {alumno.note}")
 
     def PromedioNotas(self):
         promedio = 0
@@ -35,20 +40,30 @@ class Colegio:
 
 def main():
     students = Colegio()
-    print("1) Registrar Alumno")
-    print("2) Mostrar Lista de Alumnos")
-    print("3) Buscar Alumno por su carné")
-    print("4) Promedio notas de todos los alumnos")
-    op = input("Seleccione una opción:")
+    while True:
+        try:
+            print("1) Registrar Alumno")
+            print("2) Mostrar Lista de Alumnos")
+            print("3) Buscar Alumno por su carné")
+            print("4) Promedio notas de todos los alumnos")
+            print("5) Salir")
 
-    if op == "1":
-        students.Registro()
-    elif op == "2":
-        students.Mostrar()
-    elif op == "3":
-        students.BuscarAlumno()
-    elif op == "4":
-        students.PromedioNotas()
+            op = input("Seleccione una opción:")
+
+            if op == "1":
+                students.Registro()
+            elif op == "2":
+                students.Mostrar()
+            elif op == "3":
+                students.BuscarAlumno()
+            elif op == "4":
+                students.PromedioNotas()
+            elif op == "5":
+                break
+
+        except:
+            print("Hubo un error ")
+
 
 
 main()
