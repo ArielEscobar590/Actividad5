@@ -33,8 +33,9 @@ class Colegio:
             for alumno in self.alumnos:
                 if alumno.carne == buscarcarne:
                     print(f"Hemos encontrado ha el Alumno: {alumno.nombre} con el carne: {alumno.carne}")
-                    print(f"Datos del Alumno:")
-                    print(f" Carrera: {alumno.alumnos}, Nota Final: {alumno.note}")
+                    print(f"Datos del Alumno: \nCarrera: {alumno.carrera}, Nota Final: {alumno.note}")
+                else:
+                    print(f"No se hay Alumno Registrado con el carné: {buscarcarne} ")
         else:
             print("No hay alumnos Registrados ")
 
@@ -52,7 +53,7 @@ def main():
     students = Colegio()
     while True:
         try:
-            print("1) Registrar Alumno")
+            print("\n1) Registrar Alumno")
             print("2) Mostrar Lista de Alumnos")
             print("3) Buscar Alumno por su carné")
             print("4) Promedio notas de todos los alumnos")
