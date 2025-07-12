@@ -18,24 +18,34 @@ class Colegio:
 
     def Mostrar(self):
         a = 1
-        print("Lista de Alumnos: ")
-        for alumno in self.alumnos:
-            print(f"{a}) Nombre: {alumno.nombre}, Carne: {alumno.carne}, Carrera: {alumno.carrera}, Nota Final: {alumno.note}")
-            a += 1
+        if len(self.alumnos) > 0:
+            print("Lista de Alumnos: ")
+            for alumno in self.alumnos:
+                print(
+                    f"{a}) Nombre: {alumno.nombre}, Carne: {alumno.carne}, Carrera: {alumno.carrera}, Nota Final: {alumno.note}")
+                a += 1
+        else:
+            print("No hay alumnos Registrados ")
 
     def BuscarAlumno(self):
-        buscarcarne = input("Ingrese el carné del alumno")
-        for alumno in self.alumnos:
-            if alumno.carne == buscarcarne:
-                print(f"Hemos encontrado ha el Alumno: {alumno.nombre} con el carne: {alumno.carne}")
-                print(f"Datos del Alumno:")
-                print(f" Carrera: {alumno.alumnos}, Nota Final: {alumno.note}")
+        if len(self.alumnos) > 0:
+            buscarcarne = input("Ingrese el carné del alumno")
+            for alumno in self.alumnos:
+                if alumno.carne == buscarcarne:
+                    print(f"Hemos encontrado ha el Alumno: {alumno.nombre} con el carne: {alumno.carne}")
+                    print(f"Datos del Alumno:")
+                    print(f" Carrera: {alumno.alumnos}, Nota Final: {alumno.note}")
+        else:
+            print("No hay alumnos Registrados ")
 
     def PromedioNotas(self):
-        promedio = 0
-        for alumno in self.alumnos:
-            promedio += alumno.note
-        print(f"El promedio de los alumnos es: {promedio/len(self.alumnos)}")
+        if len(self.alumnos) > 0:
+            promedio = 0
+            for alumno in self.alumnos:
+                promedio += alumno.note
+            print(f"El promedio de los alumnos es: {promedio / len(self.alumnos)}")
+        else:
+            print("No hay alumnos Registrados ")
 
 
 def main():
