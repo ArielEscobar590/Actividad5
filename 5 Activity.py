@@ -14,15 +14,22 @@ class Colegio:
         carne = input("Carne: ")
         carrera = input("Carrera: ")
         note = input("Nota Final: ")
-        self.alumnos.append(alumno)
+        self.alumnos.append(Alumno(name, carne, carrera, note))
 
     def Mostrar(self):
+        a = 1
         print("Lista de Alumnos: ")
         for alumno in self.alumnos:
             print(f"{a}) Nombre: {alumno.nombre}, Carne: {alumno.carne}, Carrera: {alumno.carrera}, Nota Final: {alumno.note}")
+            a += 1
 
     def BuscarAlumno(self):
         print("Ingrese el carné del alumno")
+
+    def PromedioNotas(self):
+        promedio = 0
+        for alumno in self.alumnos:
+            promedio += alumno.note
 
 
 def main():
@@ -35,9 +42,12 @@ def main():
 
     if op == "1":
         students.Registro()
-
-
-
+    elif op == "2":
+        students.Mostrar()
+    elif op == "3":
+        students.BuscarAlumno()
+    elif op == "4":
+        students.PromedioNotas()
 
 
 main()
